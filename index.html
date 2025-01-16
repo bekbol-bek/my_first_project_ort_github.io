@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебный сайт по кыргызскому языку</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<body>
+  <div class="bounce-loader">
+    <span style="--i: 1s"></span>
+    <span style="--i: 1.15s"></span>
+    <span style="--i: 1.15s"></span>
+</div>
+    <header>
+        <a href="#" class="logo-link">
+            <img src="img/ORT_icon.ico" alt="Logo" class="logo-image">
+        </a>
+        <div class="header-title-container">
+            <h2>ORT studying</h2>
+        </div>
+        
+    </header>
+    
+
+    <nav class="menu">
+        <ul>
+          <li>
+            <a href="suilom-toluktoo.html" onclick="toggleSection('suilom-toluktoo')">
+              <img src="img/1870090.png" alt="Image" width="40" height="40"> Сүйлөм толуктоо
+            </a>
+          </li>
+          <li>
+            <a href="analogiya.html" onclick="toggleSection('analogiya')">
+              <img src="img/bekbol_2.png" alt="Image" width="40" height="40"> Аналогия
+            </a>
+          </li>
+          <li>
+            <a href="okuptushunuu.html" onclick="toggleSection('okuptushunuu')">
+              <img src="img/201612.png" alt="Image" width="40" height="40"> Окуп түшүнүү
+            </a>
+          </li>
+          <li>
+            <a href="html.html" onclick="toggleSection('gramatika')">
+              <img src="img/bekbol_1.png" alt="Image" width="40" height="40"> Грамматика
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-btn">
+              <img src="img/4085087.png" alt="Image" width="40" height="40"> Другие
+            </a>
+            <ul class="dropdown-content">
+              <li><a href="kyrgyz.html"><img src="img/1803705.png" alt="Image" height="40" width="40"></a></li>
+              <li><a href="flag.html"><img src="img/earth_and_world_flags_vector_graphics_576719-removebg-preview.png" alt="Image" width="40" height="40"></a></li>
+              <li><a href="#">Каталог3</a></li>
+            </ul>
+      </li>
+        </ul>
+      </nav>
+      
+    
+    <div class="container">
+        <h3>Okup tushunuu</h3>
+        <img src="img/pngtree-a-good-man-who-reads-many-books-png-image_12463292-removebg-preview.png" alt="Человек, читающий книги">
+        <h3>Okup tushunuu</h3>
+    </div>
+    <div class="h33">
+        <h1>baary sen Ychyn</h1>
+    </div>
+
+    <div class="container"
+    >
+        <h3>Suilom toluktoo</h3>
+        <img src="img/1first-removebg-preview.png" alt="Человек, читающий книги" >
+        
+    </div>
+    <div class="h33">
+        <h1>baary sen Ychyn</h1>
+    </div>
+
+    <div class="container">
+       
+        <img src="img/22-removebg-preview.png" alt="Человек, читающий книги">
+        <h3>Analogiya</h3>
+    </div>
+
+  <div>
+    <div class="container1">
+      <p>Erjan r</p>
+          
+    </duv>
+  </div>
+
+    <footer>
+        <p>Учебный сайт © 2024. Все права защищены.</p>
+    </footer>
+    <script>
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top <= window.innerHeight && rect.bottom >= 0;
+        }
+
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.container, h1, h2, h3, p');
+            elements.forEach(function(element) {
+                if (isElementInViewport(element)) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll();
+    // script.js
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdownBtn = document.querySelector(".dropdown-btn");
+  const dropdownContent = document.querySelector(".dropdown-content");
+
+  dropdownBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    dropdownContent.style.display =
+      dropdownContent.style.display === "block" ? "none" : "block";
+  });
+
+  // Закрытие подменю при клике вне его области
+  document.addEventListener("click", (e) => {
+    if (!dropdownBtn.contains(e.target) && !dropdownContent.contains(e.target)) {
+      dropdownContent.style.display = "none";
+    }
+  });
+});
+
+window.addEventListener('load', () => {
+        document.querySelector('.bounce-loader').style.display = 'none'; // Убираем лоадер
+        document.querySelector('.content').classList.add('hidden'); // Показываем контент
+    });
+
+
+
+    </script>
+
+
+    
+</body>
+</html>

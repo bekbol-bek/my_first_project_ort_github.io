@@ -1,0 +1,371 @@
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+    color: #333;
+    
+}
+
+/* Стили для шапки */
+header {
+    background: linear-gradient(to bottom, #a1c4fd, #c2e9fb); /* Ваш градиент */
+    color: #fff;
+    padding: 5px 0;
+    text-align  : center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+header h1 {
+    font-family: "Sour Gummy", sans-serif;
+    font-size: 2.5em;
+    margin: 0;
+    margin-top: 50px;
+    
+}
+
+.logo-link {
+    display: flex; /* Для горизонтального размещения */
+    align-items: center; /* Вертикальное выравнивание */
+    text-decoration: none;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+/* Стили для изображения логотипа */
+.logo-image {
+    display: block;
+    max-width: 30px; /* Размер логотипа */
+    height: auto;
+    transition: opacity 0.3s ease;
+    margin-left :10px; /* Если нужен отступ от текста (опционально) */
+}
+
+
+
+
+/* Стили для навигации */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    margin: 0;
+    background: #918bdf; /* Светло-зеленый фон */
+    border-radius: 25px;
+    height: 10px;
+}
+nav {
+    position: fixed;
+    top: 0; /* Расположение сверху */
+    left: 0; /* Расположение слева */
+    width: 100%; /* Растягиваем навигацию на всю ширину */
+    height: 10px;
+    z-index: 1000; /* Устанавливаем высокий слой, чтобы было поверх контента */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для выделения */
+}
+
+nav li {
+    margin: 0 20px;
+    height: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: #004d40;
+    transform: scale(1.1);
+}
+
+
+
+
+#intro {
+    text-align: center;
+    padding: 20px;
+}
+
+button {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+#testSection {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#timer {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+button[type="submit"] {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5
+}
+
+#timer {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #d32f2f; /* Цвет таймера */
+}
+
+
+
+
+/* Мобильная версия */
+@media (max-width: 1000px) {
+    nav {
+        justify-content: center; /* Центрируем меню для мобильной версии */
+        padding: 8px; /* Меньше отступов */
+    }
+
+    .logo-image {
+        max-width: 20px; /* Уменьшаем логотип для мобильных устройств */
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column; /* Ставим содержимое вертикально на маленьких экранах */
+        align-items: center;
+    }
+
+    .logo-image {
+        max-width: 20px; /* Ещё больше уменьшаем логотип */
+    }
+}
+/* Мобильная версия */
+@media (max-width: 768px) {
+    /* Адаптация для навигации */
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    nav a {
+        font-size: 1.5em;
+    }
+
+    /* Контейнер с текстом и изображением */
+    .container {
+        flex-direction: column; /* Изменяем направление на колонку */
+        text-align: center;
+    }
+
+    .container img {
+        max-width: 90%; /* Уменьшаем размер изображения */
+        margin-top: 15px;
+    }
+
+    /* Уменьшаем размеры шрифта */
+    h3 {
+        font-size: 1.8em;
+    }
+
+    .h33 {
+        font-family: "Sour Gummy", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+       
+        font-size: 2.5em;
+    }
+
+    footer p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Для очень маленьких экранов */
+    header h2 {
+        font-family: "Sour Gummy", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+       
+        font-size: 1.8em;
+    }
+
+    
+    .container img {
+        max-width: 90%;
+    }
+
+    .h33 {
+        font-family: "Sour Gummy", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+       
+        font-size: 2em;
+    }
+}
+.intro-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.step-text {
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 10px 0;
+    padding-left: 15px;
+    border-left: 4px solid #a1c4fd; /* Вертикальная линия для выделения */
+}
+
+.summary-text {
+    font-size: 1.1em;
+    font-style: italic;
+    color: #333;
+    background-color: #f1f8ff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.container {
+    width: 80%; /* Контейнер занимает 80% ширины */
+    margin: 0 auto; /* Центрируем контейнер */
+    text-align: justify; /* Выравнивание текста по ширине */
+    line-height: 1.6; /* Увеличиваем межстрочный интервал для лучшего восприятия */
+}
+
+.number {
+    display: block; /* Делаем цифры отдельными блоками */
+    font-weight: bold; /* Цифры жирные */
+    font-size: 1.5em; /* Размер цифры */
+    margin-top: 20px; /* Отступ сверху */
+    margin-left: 30px; /* Отступ слева для цифры */
+}
+
+
+
+
+
+    /* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: rgb(169, 84, 84);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    color: #953b3b;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #864040;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bc4141;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+  }

@@ -1,0 +1,458 @@
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+    color: #333;
+}
+
+/* Стили для шапки */
+header {
+    background: linear-gradient(to bottom, #a1c4fd, #c2e9fb); /* Ваш градиент */
+    color: #fff;
+    padding: 5px 0;
+    text-align  : center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+header h1 {
+    font-family: "Sour Gummy", sans-serif;
+    font-size: 2.5em;
+    margin: 0;
+    margin-top: 50px;
+    
+}
+
+.logo-link {
+    display: flex; /* Для горизонтального размещения */
+    align-items: center; /* Вертикальное выравнивание */
+    text-decoration: none;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+/* Стили для изображения логотипа */
+.logo-image {
+    display: block;
+    max-width: 30px; /* Размер логотипа */
+    height: auto;
+    transition: opacity 0.3s ease;
+    margin-left :10px; /* Если нужен отступ от текста (опционально) */
+}
+
+
+
+
+/* Стили для навигации */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    margin: 0;
+    background: #918bdf; /* Светло-зеленый фон */
+    border-radius: 25px;
+    height: 10px;
+}
+nav {
+    position: fixed;
+    top: 0; /* Расположение сверху */
+    left: 0; /* Расположение слева */
+    width: 100%; /* Растягиваем навигацию на всю ширину */
+    height: 10px;
+    z-index: 1000; /* Устанавливаем высокий слой, чтобы было поверх контента */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для выделения */
+}
+
+nav li {
+    margin: 0 20px;
+    height: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: #004d40;
+    transform: scale(1.1);
+}
+
+
+
+#intro {
+    text-align: center;
+    padding: 20px;
+}
+
+button {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+#testSection {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#timer {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+button[type="submit"] {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5
+}
+
+#timer {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #d32f2f; /* Цвет таймера */
+}
+
+
+/* Мобильная версия */
+@media (max-width: 1000px) {
+    nav {
+        justify-content: center; /* Центрируем меню для мобильной версии */
+        padding: 8px; /* Меньше отступов */
+    }
+
+    .logo-image {
+        max-width: 20px; /* Уменьшаем логотип для мобильных устройств */
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column; /* Ставим содержимое вертикально на маленьких экранах */
+        align-items: center;
+    }
+
+    .logo-image {
+        max-width: 20px; /* Ещё больше уменьшаем логотип */
+    }
+}
+/* Мобильная версия */
+@media (max-width: 768px) {
+    /* Адаптация для навигации */
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    nav a {
+        font-size: 1.5em;
+    }
+
+    /* Контейнер с текстом и изображением */
+    .container {
+        flex-direction: column; /* Изменяем направление на колонку */
+        text-align: center;
+    }
+
+    .container img {
+        max-width: 90%; /* Уменьшаем размер изображения */
+        margin-top: 15px;
+    }
+
+    /* Уменьшаем размеры шрифта */
+    h3 {
+        font-size: 1.8em;
+    }
+
+    .h33 {
+        font-family: "Sour Gummy", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+       
+        font-size: 2.5em;
+    }
+
+    footer p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Для очень маленьких экранов */
+    header h2 {
+        font-family: "Sour Gummy", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+       
+        font-size: 1.8em;
+    }
+
+    
+    .container img {
+        max-width: 90%;
+    }
+
+    .h33 {
+        font-family: "Sour Gummy", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+       
+        font-size: 2em;
+    }
+}
+.intro-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 15px;
+    margin-left: 60px;  
+}
+
+.step-text {
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 10px 0;
+    padding-left: 15px;
+    border-left: 4px solid #a1c4fd; /* Вертикальная линия для выделения */
+}
+
+.summary-text {
+    font-size: 1.1em;
+    font-style: italic;
+    color: #333;
+    background-color: #f1f8ff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.container {
+    width: 80%; /* Контейнер занимает 80% ширины */
+    margin: 0 auto; /* Центрируем контейнер */
+    text-align: justify; /* Выравнивание текста по ширине */
+    line-height: 1.6; /* Увеличиваем межстрочный интервал для лучшего восприятия */
+}
+
+.number {
+    display: block; /* Делаем цифры отдельными блоками */
+    font-weight: bold; /* Цифры жирные */
+    font-size: 1.5em; /* Размер цифры */
+    margin-top: 20px; /* Отступ сверху */
+    margin-left: 30px; /* Отступ слева для цифры */
+}
+
+.test_1 {
+    text-align: center;
+    padding: 20px;
+    
+    
+    
+}
+.test_1_1 {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block; /* Или block, если нужен полный отступ */
+    margin: 10px 0; /* Отступ сверху и снизу */
+    
+    
+  
+
+}
+.test_1_1:hover {
+    background-color: #004d40;
+
+}
+@media (max-width: 600px) {
+    .test_1 {
+      padding: 10px;
+    }
+
+    .test_1_1 {
+      font-size: 14px;
+      padding: 8px 16px;
+      width: 50%; /* Кнопка растягивается на всю ширину */
+      box-sizing: border-box;
+      margin: 10px 0; /* Отступы сохраняются */
+    }
+  }
+
+ 
+  ul {
+      list-style-type: disc; /* Тип маркера: круг */
+      padding-left: 20px; /* Отступ для маркеров */
+      margin-left: 50px;
+  }
+  ul li {
+      margin-bottom: 10px; /* Расстояние между пунктами */
+      
+  }
+.li {
+    color: #444;
+}
+
+.all-sentr {
+    margin-left: 80px;
+    margin-right: 80px;
+
+}
+
+
+
+
+/* Стили для контейнера результатов */
+#resultsList {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок */
+#resultsList h4 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* Текст для вопросов и ответов */
+#resultsList p {
+    margin: 10px 0;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Секция вопроса */
+#resultsList p strong {
+    color: #555;
+    font-weight: bold;
+}
+
+/* Стили для правильных и неправильных ответов */
+.correct-answer {
+    color: green;
+    font-weight: bold;
+}
+
+.wrong-answer {
+    color: red;
+    font-weight: bold;
+}
+
+/* Стили для объяснений */
+.explanation {
+    background-color: #e8f5e9;
+    border-left: 5px solid #4caf50;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: #2e7d32;
+    font-size: 0.9em;
+}
+
+/* Разделитель */
+#resultsList hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* Мобильная версия */
+@media (max-width: 600px) {
+    #resultsList {
+        padding: 15px;
+        margin: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #resultsList h4 {
+        font-size: 1.3em;
+    }
+
+    #resultsList p {
+        font-size: 0.9em;
+    }
+
+    .explanation {
+        font-size: 0.8em;
+        padding: 8px;
+    }
+}
+
+
+.explanation {
+    background-color: #f9f9f9; /* Светлый фон */
+    border: 1px solid #ddd; /* Легкая граница */
+    border-radius: 8px; /* Скругленные углы */
+    padding: 15px; /* Внутренние отступы */
+    margin-top: 20px; /* Отступ сверху */
+    color: #333; /* Темный текст */
+    font-family: Arial, sans-serif; /* Стандартный шрифт */
+}
+
+.explanation h4 {
+    color: #0056b3; /* Синий для заголовков */
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.explanation p {
+    margin: 10px 0; /* Отступы между абзацами */
+    line-height: 1.6; /* Удобное расстояние между строками */
+}
+
+.explanation strong {
+    color: #d9534f; /* Красный для выделения */
+}
+
+footer {
+    background-color: #00796b;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}

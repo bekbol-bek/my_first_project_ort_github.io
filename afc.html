@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Угадай страну</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
+    color: #fff;
+    padding: 5px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-image {
+    display: block;
+    max-width: 50px;
+    height: auto;
+    background-color: transparent;
+    transition: opacity 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.header-title-container {
+    flex: 1;
+    text-align: center;
+}
+
+header h2 {
+    font-family: "Sour Gummy", sans-serif;
+    font-size: 4.5em;
+    margin: 0;
+}
+
+        #gameSection {
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 600px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 100px;
+        }
+
+        #options {
+            margin-top: 15px;
+        }
+
+        .answerBtn {
+            background-color: #e0e0e0;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .answerBtn:hover {
+            background-color: #3e3c3c;
+        }
+
+        .answerBtn:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        #resultMessage {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        #resultIcon {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        @media (max-width: 480px) {
+            #gameSection {
+                padding: 15px;
+                margin: 0 10px;
+                margin-top: 50px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .answerBtn {
+                font-size: 7px;
+                padding: 7px;
+            }
+            .options {
+                max-width: 10px;
+
+            }
+        }
+        /* Для очень маленьких экранов (например, телефоны) */
+@media (max-width: 480px) {
+    header {
+        padding: 0.5px 10px;
+        margin-bottom: 0px;
+
+    }
+
+    .logo-image {
+        width: 15px; /* Еще меньший логотип */
+        height: 15px;
+    }
+
+    .header-title-container h2 {
+        font-size: 16px;
+    }
+
+    .header-title-container h4 {
+        font-size: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="flag.html" class="logo-link">
+            <img src="img3/kisspng-computer-icons-arrowhead-arrow-pen-5b4687a465e030.4947115315313489004173-removebg-preview.png" alt="Logo" class="logo-image">
+        </a>
+        <div class="header-title-container">
+            <h4>начните</h4>
+        </div>
+    </header>
+    <section id="gameSection">
+        <h2>Угадай страну по городу</h2>
+        <div id="questionContainer">
+            <p id="cityName">Париж</p>
+            <img id="cityImage" src="paris_image.jpg" alt="Изображение Парижа" width="200">
+            <div id="options">
+                <button class="answerBtn" data-answer="Франция">Франция</button>
+                <button class="answerBtn" data-answer="Германия">Германия</button>
+                <button class="answerBtn" data-answer="Италия">Италия</button>
+                <button class="answerBtn" data-answer="Испания">Испания</button>
+            </div>
+    
+            <div id="resultMessage" style="display: none;">
+                <span id="resultIcon"></span> <span id="resultText"></span>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        let questions = [
+    {
+        city: "Сидней",
+        image: "sydney_image.jpg",
+        options: ["Австралия", "Новая Зеландия", "Фиджи", "Папуа-Новая Гвинея"],
+        answer: "Австралия"
+    },
+    {
+        city: "Мельбурн",
+        image: "melbourne_image.jpg",
+        options: ["Австралия", "Новая Зеландия", "Папуа-Новая Гвинея", "Фиджи"],
+        answer: "Австралия"
+    },
+    {
+        city: "Перт",
+        image: "perth_image.jpg",
+        options: ["Австралия", "Новая Зеландия", "Фиджи", "Папуа-Новая Гвинея"],
+        answer: "Австралия"
+    },
+    {
+        city: "Окленд",
+        image: "auckland_image.jpg",
+        options: ["Новая Зеландия", "Австралия", "Фиджи", "Папуа-Новая Гвинея"],
+        answer: "Новая Зеландия"
+    },
+    {
+        city: "Канберра",
+        image: "canberra_image.jpg",
+        options: ["Австралия", "Новая Зеландия", "Фиджи", "Папуа-Новая Гвинея"],
+        answer: "Австралия"
+    },
+    {
+        city: "Гамильтон",
+        image: "hamilton_image.jpg",
+        options: ["Новая Зеландия", "Австралия", "Фиджи", "Папуа-Новая Гвинея"],
+        answer: "Новая Зеландия"
+    },
+    {
+        city: "Брисбен",
+        image: "brisbane_image.jpg",
+        options: ["Австралия", "Новая Зеландия", "Фиджи", "Папуа-Новая Гвинея"],
+        answer: "Австралия"
+    },
+    {
+        city: "Таунсвилл",
+        image: "townsville_image.jpg",
+        options: ["Австралия", "Новая Зеландия", "Фиджи", "Папуа-Новая Гвинея"],
+        answer: "Австралия"
+    },
+    {
+        city: "Фиджи",
+        image: "fiji_image.jpg",
+        options: ["Фиджи", "Австралия", "Новая Зеландия", "Папуа-Новая Гвинея"],
+        answer: "Фиджи"
+    },
+    {
+        city: "Порт-Морсби",
+        image: "port_moresby_image.jpg",
+        options: ["Папуа-Новая Гвинея", "Австралия", "Фиджи", "Новая Зеландия"],
+        answer: "Папуа-Новая Гвинея"
+    }
+];
+
+
+
+    
+    
+        let currentQuestionIndex = 0;
+
+        function showQuestion() {
+            let question = questions[currentQuestionIndex];
+            document.getElementById('cityName').innerText = question.city;
+            document.getElementById('cityImage').src = question.image;
+
+            let options = document.querySelectorAll('.answerBtn');
+            options.forEach((btn, index) => {
+                btn.innerText = question.options[index];
+                btn.dataset.answer = question.options[index];
+                btn.style.backgroundColor = '';
+                btn.disabled = false;
+            });
+
+            document.getElementById('resultMessage').style.display = 'none';
+        }
+
+        document.querySelectorAll('.answerBtn').forEach((btn) => {
+            btn.addEventListener('click', (event) => {
+                let selectedAnswer = event.target.dataset.answer.trim();
+                let correctAnswer = questions[currentQuestionIndex].answer.trim();
+
+                let resultIcon = document.getElementById('resultIcon');
+                let resultText = document.getElementById('resultText');
+
+                let options = document.querySelectorAll('.answerBtn');
+                options.forEach((btn) => btn.disabled = true); // Блокируем все кнопки
+
+                if (selectedAnswer === correctAnswer) {
+                    resultIcon.innerText = '✓';
+                    resultText.innerText = 'Правильный ответ!';
+                    event.target.style.backgroundColor = 'green';
+                } else {
+                    resultIcon.innerText = '✗';
+                    resultText.innerText = 'Неправильный ответ!';
+                    event.target.style.backgroundColor = 'red';
+                }
+
+                document.getElementById('resultMessage').style.display = 'block';
+
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex < questions.length) {
+                        showQuestion();
+                    } else {
+                        showCompletionMessage();
+                    }
+                }, 1000);
+            });
+        });
+
+        function showCompletionMessage() {
+            document.getElementById('gameSection').innerHTML = `
+                <h2>Игра завершена!</h2>
+                <p>Вы ответили на все вопросы. Отличная работа!</p>
+            `;
+        }
+
+        showQuestion();
+    </script>
+</body>
+</html>

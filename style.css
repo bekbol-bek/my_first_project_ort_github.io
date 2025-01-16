@@ -1,0 +1,406 @@
+/* Общий стиль для body */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+    color: #333;
+    /* height: 100vh; /* Для центрирования лоадера */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */ 
+}
+
+/* Стиль для лоадера */
+.bounce-loader {
+    position: fixed; /* Центрируем лоадер независимо от скролла */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Перемещаем в центр экрана */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000; /* Поверх всего другого контента */
+}
+
+.bounce-loader span {
+    width: 16px;
+    height: 16px;
+    background-color: #4caf50;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite ease-in-out;
+    animation-delay: var(--i);
+}
+
+/* Анимация bounce */
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: scale(0); /* Исходное и конечное состояние — точка исчезает */
+    }
+    40% {
+        transform: scale(1); /* В середине анимации точка становится видимой */
+    }
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
+    color: #fff;
+    padding: 5px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-image {
+    display: block;
+    max-width: 150px;
+    height: auto;
+    background-color: transparent;
+    transition: opacity 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.header-title-container {
+    flex: 1;
+    text-align: center;
+}
+
+header h2 {
+    font-family: "Sour Gummy", sans-serif;
+    font-size: 4.5em;
+    margin: 0;
+}
+
+/* Стили навигации */
+nav ul {
+    list-style: none;
+    display: flex; /* Горизонтальное выравнивание */
+    justify-content: space-evenly; 
+    align-items: center;
+    padding: 10px 0; /* Уменьшили отступы сверху и снизу */
+    margin: 0;
+    background: #918bdf;
+    border-radius: 25px;
+    margin: 30px;
+    
+    
+}
+
+nav li {
+    margin: 0 35px; /* Уменьшили отступы между пунктами */
+    position: relative; /* Для подменю */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease, transform 0.3s ease;
+    white-space: nowrap; /* Чтобы текст не переносился */
+    
+}
+
+nav a:hover {
+    color: #004d40;
+    transform: scale(1.1);
+}
+
+/* Подменю (dropdown) */
+.dropdown-content {
+    display: none; /* Скрываем подменю по умолчанию */
+    position: absolute; /* Относительно родителя (li) */
+    top: 50%; /* Подменю начинается сразу под родительским элементом */
+    left: 0; /* Выравниваем по левому краю родителя */
+    background: #f9f9f9; /* Цвет фона */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Тень для подменю */
+    z-index: 1000; /* Поверх других элементов */
+    border-radius: 9px; /* Скругленные углы */
+    min-width: 150%; /* Ширина подменю */
+    flex-direction: column; /* Вертикальное расположение */
+    max-height: 50vh; /* Ограничение по высоте */
+    overflow-y: auto; /* Прокрутка, если контент превышает максимальную высоту */
+    padding: 20px 0; /* Отступы внутри подменю */
+}
+
+/* Элементы внутри подменю */
+.dropdown-content li {
+    margin: 0; /* Убираем отступы между пунктами */
+    list-style: none; /* Убираем маркеры списка */
+}
+
+/* Ссылки внутри подменю */
+.dropdown-content a {
+    color: #333; /* Цвет текста */
+    padding: 8px 12px; /* Отступы вокруг текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-size: 1em; /* Размер текста */
+    transition: background 0.3s ease, color 0.3s ease; /* Анимация при наведении */
+    border-radius: 8px; /* Скругление для ссылок */
+    display: block; /* Ссылка занимает всю ширину */
+}
+
+/* Состояние при наведении */
+.dropdown-content a:hover {
+    background: #ddd; /* Цвет фона при наведении */
+    color: #000; /* Цвет текста при наведении */
+}
+
+/* Активация подменю при наведении */
+.dropdown:hover .dropdown-content {
+    display: flex; /* Показываем подменю */
+}
+
+
+
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    /* Адаптация для навигации */
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+        justify-content: space-evenly;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    nav a {
+        font-size: 1.5em;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .logo-image {
+        max-width: 70px;
+    }
+    .logo-link {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-image {
+        max-width: 50px;
+    }
+    .logo-link {
+        margin-right: 5px;
+    }
+}
+
+
+/* Стили для изображений */
+img {
+    display: block;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для секций */
+h3 {
+    font-family: "Sour Gummy", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+   
+
+    text-align: center;
+    font-size: 5em;
+    margin-top: 50px;
+    color: #004d40;
+}
+
+/* Стили для футера */
+footer {
+    background-color: #00796b;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Анимация для появления */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.visible {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Контейнер для размещения текста и изображения рядом */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Для изображения */
+.container img {
+    max-width: 50%;
+    border-radius: 10px;
+}
+
+.container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.h33 {
+    font-family: "Sour Gummy", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+        
+
+
+    font-family: "Sour Gummy", sans-serif;
+    font-size: 3.6em;
+    color: #72c5b7;
+    margin-right: 0px; 
+    margin-left: 70px
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    
+    /* Контейнер с текстом и изображением */
+    .container {
+        flex-direction: column; /* Изменяем направление на колонку */
+        text-align: center;
+    }
+
+    .container img {
+        max-width: 80%; /* Уменьшаем размер изображения */
+        margin-top: 15px;
+    }
+
+    /* Уменьшаем размеры шрифта */
+    h3 {
+        font-size: 1.8em;
+    }
+
+    .h33 {
+        font-family: "Sour Gummy", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+       
+        font-size: 2.5em;
+    }
+
+    footer p {
+        font-size: 1em;
+    }
+}
+
+
+@media (max-width: 480px) {
+    /* Для очень маленьких экранов */
+    header h2 {
+        font-family: "Sour Gummy", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+       
+        font-size: 1.8em;
+    }
+
+    nav a {
+        font-size: 1.2em;
+    }
+
+    .container img {
+        max-width: 90%;
+    }
+
+    .h33 {
+        font-family: "Sour Gummy", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+       
+        font-size: 2em;
+    }
+}
+
+
+.container1 {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 600px;
+    background: rgb(170, 164, 164);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+}
+
+#options {
+    margin-top: 15px;
+}
+
+.answerBtn {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 50px;
+    transition: background-color 0.3s;
+}
+
+.answerBtn:hover {
+    background-color: #68995c;
+}
+
+.answerBtn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+#resultMessage {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#resultIcon {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+

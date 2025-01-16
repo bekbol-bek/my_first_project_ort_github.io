@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Континенты</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
+    color: #fff;
+    padding: 5px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-image {
+    display: block;
+    max-width: 150px;
+    height: auto;
+    background-color: transparent;
+    transition: opacity 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.header-title-container {
+    flex: 1;
+    text-align: center;
+}
+
+header h2 {
+    font-family: "Sour Gummy", sans-serif;
+    font-size: 4.5em;
+    margin: 0;
+}
+
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+            font-size: 20px;
+            color: #333;
+        }
+        /* Мобильные стили */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 15px;
+    }
+
+    .logo-image {
+        width: 100px; /* Меньший размер логотипа на мобильных устройствах */
+        height: 100px;
+    }
+
+    .header-title-container h2 {
+        font-size: 18px;
+    }
+
+    .header-title-container h4 {
+        font-size: 12px;
+    }
+}
+
+/* Для очень маленьких экранов (например, телефоны) */
+@media (max-width: 480px) {
+    header {
+        padding: 10px 10px;
+    }
+
+    .logo-image {
+        width: 100px; /* Еще меньший логотип */
+        height: 100px;
+    }
+
+    .header-title-container h2 {
+        font-size: 16px;
+    }
+
+    .header-title-container h4 {
+        font-size: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="img3/ORT_icon.ico" alt="Logo" class="logo-image">
+        </a>
+        <div class="header-title-container">
+            <h2>Выберите континент</h2>
+            <h4>И угадай страну</h4>
+        </div>
+    </header>
+    <div class="card-container">
+        <!-- Карточка Европы -->
+        <div class="card">
+            <img src="img3/1000_F_126223752_urlFvUp36kd6Vy9Rxq70GUblKEKLeSrO-removebg-preview.png"jpg alt="Европа" onclick="openTest('europ.html')">
+            <div class="card-content">
+                <h3>Европа</h3>
+            </div>
+        </div>
+        <!-- Карточка Азии -->
+        <div class="card">
+            <img src="img3/png-transparent-east-asia-europe-map-globe-continent-map-text-globe-logo-removebg-preview.png" alt="Азия" onclick="openTest('asia.html')">
+            <div class="card-content">
+                <h3>Азия</h3>
+            </div>
+        </div>
+        <!-- Карточка Африки -->
+        <div class="card">
+            <img src="img3/pngtree-silhouette-of-africa-continent-and-madagascar-island-with-the-word-africa-png-image_12716443-removebg-preview.png" alt="Африка" onclick="openTest('africa.html')">
+            <div class="card-content">
+                <h3>Африка</h3>
+            </div>
+        </div>
+        <!-- Карточка Северной Америки -->
+        <div class="card">
+            <img src="img3/png-transparent-united-states-south-america-continent-north-america-america-s-leaf-wikimedia-commons-grass-thumbnail-removebg-preview.png" alt="Северная Америка" onclick="openTest('amerser.html')">
+            <div class="card-content">
+                <h3>Северная Америка</h3>
+            </div>
+        </div>
+        <!-- Карточка Южной Америки -->
+        <div class="card">
+            <img src="img3/south-america-3d-map-with-countries-borders-vector-removebg-preview.png" alt="Южная Америка" width="30px" height="30px" onclick="openTest('amerush.html')">
+            <div class="card-content">
+                <h3>Южная Америка</h3>
+            </div>
+        </div>
+        <!-- Карточка Австралии -->
+        <div class="card">
+            <img src="img3/png-transparent-australia-map-computer-icons-made-in-australia-orange-computer-wallpaper-silhouette-removebg-preview.png" alt="Австралия" onclick="openTest('afc.html')">
+            <div class="card-content">
+                <h3>Австралия</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Функция для перехода на страницу теста
+        function openTest(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

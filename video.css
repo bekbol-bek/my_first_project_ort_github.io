@@ -1,0 +1,198 @@
+/* Общий сброс */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Основной стиль для страницы */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Секция с видео */
+.video-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-section h1 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    font-size: 1.2em;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+}
+
+/* Сетка для карточек */
+.video-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Карточка видео */
+.video-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.video-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Видео */
+.video-card video {
+    width: 100%;
+    height: auto;
+    border-bottom: 4px solid #a1c4fd;
+}
+
+/* Заголовок и текст карточки */
+.video-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 15px 0 10px;
+}
+
+.video-card p {
+    font-size: 1em;
+    color: #666;
+    padding: 0 10px 15px;
+}
+
+/* Кнопка */
+.video-card .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.video-card .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Адаптивная версия для мобильных устройств */
+@media (max-width: 768px) {
+    .video-card {
+        max-width: 90%; /* Карточка занимает 90% ширины экрана */
+    }
+    .video-card img {
+        width: 100%; /* Картинка растягивается по ширине карточки */
+        border-radius: 10px; /* Скругленные углы у изображения */
+        margin-bottom: 15px; /* Отступ снизу */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-card {
+        max-width: 100%; /* Карточка занимает всю ширину экрана */
+        padding: 15px; /* Уменьшенные отступы */
+    }
+
+    .video-card h3 {
+        font-size: 1em; /* Меньший заголовок */
+    }
+
+    .video-card p {
+        font-size: 0.9em; /* Меньший текст */
+    }
+
+    .video-card .btn {
+        padding: 8px 10px; /* Уменьшенные отступы внутри кнопки */
+        font-size: 0.9em; /* Меньший размер текста */
+    }
+}
+
+
+nav a:hover {
+    color: #004d40;
+    transform: scale(1.1);
+}
+
+/* Переключатель языка */
+.language-switcher {
+    text-align: center; /* Центрируем блок */
+    margin-bottom: 10px;
+    max-width: 800px; /* Отступ снизу */
+}
+
+/* Стили для ссылок переключателя */
+.language-switcher a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #4CAF50; /* Зеленый цвет текста */
+    
+    margin: 0 15px; /* Отступы по бокам */
+    padding: 8px 15px; /* Отступы внутри */
+    border-radius: 5px; /* Скругленные углы */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Плавные переходы */
+}
+
+/* Эффект при наведении */
+.language-switcher a:hover {
+    background-color: #4CAF50; /* Зеленый фон */
+    
+}
+
+/* Активная ссылка (если нужно выделить текущий язык) */
+.language-switcher a.active {
+    font-weight: bold; /* Жирный текст */
+    background-color: #1872b6; /* Темный зеленый фон */
+    color: white; /* Белый текст */
+}
+.language-switcher a.activee {
+    font-weight: bold; /* Жирный текст */
+    background-color: #a12806; /* Темный зеленый фон */
+    color: white; /* Белый текст */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
+    color: #fff;
+    padding: 5px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-image {
+    display: block;
+    max-width: 150px;
+    height: auto;
+    background-color: transparent;
+    transition: opacity 0.3s ease;
+    margin-bottom: 10px;
+}

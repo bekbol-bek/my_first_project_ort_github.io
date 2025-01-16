@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Окшоштуктар</title>
+    <link rel="stylesheet" href="style_test.css">
+</head>
+<body>
+    <header>
+        <h1>Окшоштуктар</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <a href="analogiya.html" class="logo-link">
+                <img src="img/2099190-removebg-preview.png" alt="Logo" class="logo-image">
+            </a>
+        </ul>
+    </nav>
+    
+
+
+
+
+
+    
+       <!-- Инструкция и кнопка для начала теста -->
+       <section id="intro">
+        <h3>Пройди тест на аналогии</h3>
+        <p>Нажмите кнопку ниже, чтобы начать тест.К сожалению, анализа этого теста нет. У вас будет 10 вопросов.</p>
+        <button id="startTestBtn">Пройти тест</button>
+        
+    </section>
+<!-- Форма для теста (по умолчанию скрыта) -->
+<section id="testSection" style="display: none;">
+    <!-- Таймер -->
+    <p id="timer">Оставшееся время: 30:00</p>
+
+    <div id="questionSection"></div>
+    
+    <!-- Кнопка для перехода к следующему вопросу -->
+    <button id="nextQuestionBtn" style="display: none;">Следующий вопрос</button>
+    
+    <!-- Кнопка для завершения теста -->
+    <button id="finishTestBtn" style="display: none;">Завершить тест</button>
+</section>
+
+<!-- Результаты -->
+<section id="resultsSection" style="display: none;">
+    <h3>Результаты теста</h3>
+    <div id="resultsList"></div>  <!-- Этот элемент будет заполняться результатами -->
+    <button id="restartTestBtn">Пройти тест заново</button>
+</section>
+
+    <footer>
+        <p>Учебный сайт © 2024. Все права защищены.</p>
+    </footer>
+
+    <script src="test_1.js"></script>
+
+</body>
+</html>
+

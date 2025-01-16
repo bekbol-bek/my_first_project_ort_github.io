@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видео Уроки</title>
+    <style>
+        /* Общий сброс */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+/* Секция с видео */
+.video-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Секция с видео */
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Контейнер для видео */
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 карточки в ряд */
+    gap: 15px; /* Отступ между карточками */
+    max-width: 900px; /* Максимальная ширина контейнера */
+    width: 100%;
+    margin: 0 auto; /* Центрируем контейнер по горизонтали */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center; /* Центрируем текст внутри карточек */
+}
+
+/* Стили для карточки видео */
+.video-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    min-height: 250px; /* Уменьшили минимальную высоту карточки */
+    padding: 10px; /* Добавили отступы внутри карточки */
+}
+
+.video-card:hover {
+    transform: translateY(-5px); /* Легкий эффект подъема при наведении */
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 180px; /* Уменьшили высоту видео */
+    border: none;
+}
+
+.video-card h3 {
+    font-size: 1em;
+    margin-top: 10px;
+    color: #333;
+    text-align: center;
+}
+
+
+
+        /* Медиазапросы для маленьких экранов */
+        @media (max-width: 768px) {
+            .video-container {
+                grid-template-columns: repeat(2, 1fr); /* Одна карточка в ряд на экранах меньше 768px */
+            }
+
+            .video-card iframe {
+                height: 160px; /* Уменьшаем видео для маленьких экранов */
+            }
+
+            .video-card h3 {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-container {
+                grid-template-columns: repeat(1, 1fr); /* На очень маленьких экранах (например, телефоны) одна карточка */
+            }
+
+            .video-card iframe {
+                height: 140px; /* Уменьшаем видео еще больше для телефонов */
+            }
+
+            .video-card h3 {
+                font-size: 0.8em; /* Еще меньше размер шрифта */
+            }
+        }
+           
+        nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    margin: 0;
+    background: #918bdf; /* Светло-зеленый фон */
+    border-radius: 25px;
+    height: 10px;
+}
+nav {
+    position: fixed;
+    top: 0; /* Расположение сверху */
+    left: 0; /* Расположение слева */
+    width: 100%; /* Растягиваем навигацию на всю ширину */
+    height: 10px;
+    z-index: 1000; /* Устанавливаем высокий слой, чтобы было поверх контента */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для выделения */
+}
+
+nav li {
+    margin: 0 20px;
+    height: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s, transform 0.3s;
+}
+.logo-link {
+    display: flex; /* Для горизонтального размещения */
+    align-items: center; /* Вертикальное выравнивание */
+    text-decoration: none;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+/* Стили для изображения логотипа */
+.logo-image {
+    display: block;
+    max-width: 30px; /* Размер логотипа */
+    height: auto;
+    transition: opacity 0.3s ease;
+    margin-left :10px; /* Если нужен отступ от текста (опционально) */
+}
+/* Мобильная версия */
+@media (max-width: 1000px) {
+    nav {
+        justify-content: center; /* Центрируем меню для мобильной версии */
+        padding: 8px; /* Меньше отступов */
+    }
+
+    .logo-image {
+        max-width: 20px; /* Уменьшаем логотип для мобильных устройств */
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column; /* Ставим содержимое вертикально на маленьких экранах */
+        align-items: center;
+    }
+
+    .logo-image {
+        max-width: 20px; /* Ещё больше уменьшаем логотип */
+    }
+}
+/* Мобильная версия */
+@media (max-width: 768px) {
+    /* Адаптация для навигации */
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    nav a {
+        font-size: 1.5em;
+    }
+
+    /* Контейнер с текстом и изображением */
+    .container {
+        flex-direction: column; /* Изменяем направление на колонку */
+        text-align: center;
+    }
+
+    .container img {
+        max-width: 40%; /* Уменьшаем размер изображения */
+        margin-top: 15px;
+    }
+
+    /* Уменьшаем размеры шрифта */
+    h3 {
+        font-size: 1.8em;
+    }
+
+    .h33 {
+        font-family: "Sour Gummy", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+       
+        font-size: 2.5em;
+    }
+
+    footer p {
+        font-size: 1em;
+    }
+}
+h1{
+font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <a href="kyrgyz.html" class="logo-link">
+                <img src="img2/2099190-removebg-preview.png" alt="Logo" class="logo-image">
+                
+            </a>
+        </ul>
+    </nav>
+    
+ 
+<section class="video-section">
+    <h1>Видео Сабактар</h1>
+    <div class="video-container">
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/8s4r4WLQlyQ?start=18" frameborder="0" allowfullscreen></iframe>
+        
+            <h3>Илим Элим</h3>
+        </div>
+
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/x9Yj0eHksqU" frameborder="0" allowfullscreen></iframe>
+            <h3>Илим Элим</h3>
+        </div>
+
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/6Ixw7ZCnGRI" frameborder="0" allowfullscreen></iframe>
+            <h3>Илим Элим</h3>
+        </div>
+
+        <div class="video-card">
+            <!-- <iframe src="https://www.youtube.com/embed/MfS12pM07lI?list=PLiVWhYtfEhkTm-cGZE1cjjyJ87-nLa8kf&index=4" frameborder="0" allowfullscreen></iframe> -->
+            <h3>4-Сабак</h3>
+        </div>
+
+        <div class="video-card">
+            <!-- <iframe src="https://www.youtube.com/embed/6CXHTOwCWEY?list=PLiVWhYtfEhkTm-cGZE1cjjyJ87-nLa8kf&index=5" frameborder="0" allowfullscreen></iframe> -->
+            <h3>5-Сабак</h3>
+        </div>
+
+        <div class="video-card">
+            <!-- <iframe src="https://www.youtube.com/embed/3oOejRnBxxk?list=PLiVWhYtfEhkTm-cGZE1cjjyJ87-nLa8kf&index=6" frameborder="0" allowfullscreen></iframe> -->
+            <h3>6-Сабак</h3>
+        </div>
+    </div>
+</section>
+<script src="lang.js"></script>
+</body>
+</html>
